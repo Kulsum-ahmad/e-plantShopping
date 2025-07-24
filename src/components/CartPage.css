@@ -1,0 +1,21 @@
+.cart-page { padding: 1rem; }
+.cart-item {
+  display: flex;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+}
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+.qty-controls button {
+  width: 24px;
+  margin: 0 0.5rem;
+}
+.cart-actions button {
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+}

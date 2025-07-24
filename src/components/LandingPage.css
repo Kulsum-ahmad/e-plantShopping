@@ -1,0 +1,33 @@
+.landing {
+  position: relative;
+  background: url('/background.jpg') center/cover no-repeat;
+  height: 100vh;
+  color: white;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  padding: 0 1rem;
+}
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.content p {
+  margin: 0.5rem 0;
+}
+.content button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #2a7f62;
+  border: none;
+  color: white;
+  cursor: pointer;
+}

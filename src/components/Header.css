@@ -1,0 +1,17 @@
+.hdr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+.hdr h1 a {
+  text-decoration: none;
+  color: #2a7f62;
+}
+.hdr nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #333;
+}
