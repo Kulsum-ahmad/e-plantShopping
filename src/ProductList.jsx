@@ -1,31 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import './ProductList.css'
-import CartItem from './CartItem';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
-
-const totalQuantity = useSelector(state => {
-    state.cart.items.reduce((sum, item) => sum + item.quantity, 0)
-}
-);
-
+import { useState } from 'react';
+import './ProductList.css';
+import { useDispatch, useSelector } from 'react-redux';
 import { addItem } from './CartSlice';
-
-const dispatch = useDispatch();
-
-const handleAddToCart = (plant) => {
-    dispatch(addItem(plant));
-    setAddedToCart((prev) => ({ ...prev, [plant.name]: true }));
-};
+import CartItem from './CartItem';
 import PropTypes from 'prop-types';
 
 ProductList.propTypes = {
     onHomeClick: PropTypes.func
 };
 function ProductList({ onHomeClick }) {
+    const dispatch = useDispatch();
+    const totalQuantity = useSelector(state => 
+    state.cart.items.reduce((sum, item) => sum + item.quantity, 0)
+);
     const [showCart, setShowCart] = useState(false);
-    const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
     const [addedToCart, setAddedToCart] = useState({});
+
+    const handleAddToCart = (plant) => {
+    dispatch(addItem(plant));
+    setAddedToCart((prev) => ({ ...prev, [plant.name]: true }));
+};
     const plantsArray = [
         {
             category: "Air Purifying Plants",
@@ -265,7 +259,6 @@ function ProductList({ onHomeClick }) {
     };
     const handlePlantsClick = (e) => {
         e.preventDefault();
-        setShowPlants(true); // Set showAboutUs to true when "About Us" link is clicked
         setShowCart(false); // Hide the cart when navigating to About Us
     };
 
